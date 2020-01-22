@@ -1,6 +1,5 @@
 <?php
-
-    if(!isset($_GET['page']) || $_GET['page']=="home") {
+    if(!isset($_GET['page']) || empty($_GET['page']) || $_GET['page']=="home") {
         include('../templates/home.php');
     }
     elseif($_GET['page']=="connexion"){
