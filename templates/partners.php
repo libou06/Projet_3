@@ -10,11 +10,10 @@
 
 <body>
 <?php include("header.php"); ?>
-
     
     <section class="partenaires">
         
-        <img src="../src/cde.jpg" alt="logo CDE">
+        <img src="../public/img/cde.jpg" alt="logo CDE">
         
         <h2>La Chambre Des Entrepreneurs</h2>
         

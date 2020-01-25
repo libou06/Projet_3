@@ -1,2 +1,4 @@
 RewriteEngine on
-RewriteRule ^([a-z]+)?/?$ index.php?page=$1 [L]
+RewriteRule ^([a-z]+)?/?$ ?page=$1 [L]
+
+?page="partenaire"&?id=1

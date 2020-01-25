@@ -1,10 +1,11 @@
 <footer>
-    
     <nav>
         <ul>
-         |<li><a href="#"> Mentions légales</a></li>|  
-          <li><a href="#"> Contact </a></li>|
-     </ul>            
- </nav>
- 
+            <li>|</li>
+            <li><a href="#"> Mentions légales</a></li>
+            <li>|</li>
+            <li><a href="#"> Contact </a></li>
+            <li>|</li>
+        </ul>
+    </nav>
 </footer>
