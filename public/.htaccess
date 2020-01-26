@@ -1,4 +1,2 @@
 RewriteEngine on
 RewriteRule ^([a-z]+)?/?$ ?page=$1 [L]
-
-?page="partenaire"&?id=1
