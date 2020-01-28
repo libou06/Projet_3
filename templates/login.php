@@ -4,8 +4,8 @@
 
 <head>
  <meta charset="utf-8">
- <link rel="stylesheet" href="../public/css/reset.css"> 
- <link rel="stylesheet" href="../public/css/all.css" media="screen" type="text/css" />
+ <link rel="stylesheet" href="css/reset.css">
+ <link rel="stylesheet" href="css/all.css" media="screen" type="text/css" />
  <title>Connection</title>
 </head>
 <body>

@@ -61,8 +61,8 @@ if(!empty($_POST['nom']) AND !empty($_POST['prenom']) AND !empty($_POST['pseudo'
 
 <head>
  <meta charset="utf-8">
- <link rel="stylesheet" href="../public/css/reset.css"> 
- <link rel="stylesheet" href="../public/css/all.css"/>
+ <link rel="stylesheet" href="css/reset.css">
+ <link rel="stylesheet" href="css/all.css"/>
 </head>
 
 <body>

@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="utf-8" /> 
-    <link rel="stylesheet" href="../public/css/reset.css"> 
-    <link rel="stylesheet" href="../public/css/all.css">        
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/all.css">
     <title>Partenaire GBAF </title>
 </head>
 
@@ -14,7 +14,7 @@
 
     <section id="acteur">
 
-        <img src="../public/img/cde.jpg" alt="logo CDE">
+        <img src="img/cde.jpg" alt="logo CDE">
         
         <h2>La Chambre Des Entrepreneurs</h2>
         
