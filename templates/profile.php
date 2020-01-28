@@ -4,9 +4,7 @@
   <head>
       <title>Profil compte GBAF</title>
       <meta charset="utf-8">
-      <link rel="stylesheet" href="css/reset.css"> 
-      <link rel="stylesheet" href="css/all.css"/>
-
+      <?php include("link_css.php"); ?>
   </head>
   <body>
    	<?php include("header.php"); ?>

@@ -4,9 +4,8 @@
 
 <head>
  <meta charset="utf-8">
- <link rel="stylesheet" href="css/reset.css">
- <link rel="stylesheet" href="css/all.css" media="screen" type="text/css" />
- <title>Connection</title>
+    <?php include("link_css.php"); ?>
+    <title>Connection</title>
 </head>
 <body>
 	<?php include("header.php"); ?>

@@ -2,9 +2,8 @@
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8" /> 
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/all.css">
+    <meta charset="utf-8" />
+    <?php include("link_css.php"); ?>
     <title>Partenaire GBAF </title>
 </head>
 

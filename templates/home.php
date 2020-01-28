@@ -1,10 +1,10 @@
+<!-- Integrer databse connection + getAll partners -->
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
-    <meta charset="utf-8" />   
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/all.css">
+    <meta charset="utf-8" />
+    <?php include("link_css.php"); ?>
     <title>Accueil GBAF</title>
 </head>
 
@@ -15,7 +15,7 @@
 <section id="GBAF_presentation">
     <h1>Le Groupement Banque Assurance Français</h1>
     <p>Le Groupement Banque Assurance Français (GBAF) est une fédération représentant les 6 grands groupes français :</p>
-    <ul>
+    <ul class="text-center">
         <li>BNP Paribas ;</li>
         <li>BPCE ;</li>
         <li>Crédit Agricole ;</li>
@@ -32,6 +32,16 @@
     <h2>Acteurs et Partenaires</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, ipsum natus doloribus earum voluptatem unde totam possimus laborum assumenda quisquam voluptates voluptatum explicabo, quam. Omnis, sed. Reiciendis illum, magni distinctio.</p>
     <article>
+    <?php
+       /*foreach($partners as $partner){?>
+            <div>
+                <img src="img/<?php $partner['champs']?>" alt="logo Formation CO">
+                <h3><?php $partner['champs']?></h3>
+                <p><?php $partner['champs']?></p>
+                <button onclick="location.href='#';">Lire la suite</button>
+            </div>
+        <?php}*/
+    ?>
         <div>
             <img src="img/formation_co.jpg" alt="logo Formation CO">
             <h3>Formation CO</h3> 
@@ -39,7 +49,7 @@
             <button onclick="location.href='#';">Lire la suite</button>
         </div>
         <div>
-            <img src="../public/img/protectpeople.jpg" alt="logo Protect People">
+            <img src="img/protectpeople.jpg" alt="logo Protect People">
             <h3>Protect People</h3>
             <p>Protectpeople finance la solidarité nationale. Nous appliquons le principe édifié par la Sécurité sociale française en 1945 : permettre à chacun de bénéficier d’une protection sociale...</p>
             <button onclick="location.href='#';">Lire la suite</button>
