@@ -1,34 +1,38 @@
-<html>
-    <head>
-       <meta charset="utf-8">
-        <link rel="stylesheet" href="css/reset.css"> 
-        <link rel="stylesheet" href="css/all.css" media="screen" type="text/css" />
-    </head>
-    <body>
+<!DOCTYPE html>
+
+<html lang="fr">
+
+<head>
+ <meta charset="utf-8">
+ <link rel="stylesheet" href="../public/css/reset.css"> 
+ <link rel="stylesheet" href="../public/css/all.css" media="screen" type="text/css" />
+ <title>Connection</title>
+</head>
+<body>
 	<?php include("header.php"); ?>
+    <hr>
+    <div id="container">
+        <!-- zone de connexion -->
 
-        <div id="container">
-            <!-- zone de connexion -->
-            
-            <form action="verification.php" method="POST">
-                <h1>Connexion</h1>
-                
-                <label><b>Nom d'utilisateur</b></label>
-                <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+        <form action="verification.php" method="POST">
+            <h1>Connexion</h1>
 
-                <label><b>Mot de passe</b></label>
-                <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+            <label><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
 
-                <input type="submit" id='submit' value='LOGIN' >
-                <?php
-                if(isset($_GET['erreur'])){
-                    $err = $_GET['erreur'];
-                    if($err==1 || $err==2)
-                        echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-                }
-                ?>
-            </form>
-        </div>
+            <label><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+
+            <input type="submit" id='submit' value='LOGIN' >
+            <?php
+            if(isset($_GET['erreur'])){
+                $err = $_GET['erreur'];
+                if($err==1 || $err==2)
+                    echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
+            }
+            ?>
+        </form>
+    </div>
     <?php include("footer.php"); ?>    
-    </body>
+</body>
 </html>
