@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include('../src/connect_database.php');
-include('../src/Users/Registration.php');
+include('../src/Users/registration.php');
 ?>
 <html lang="fr">
 
@@ -13,11 +13,15 @@ include('../src/Users/Registration.php');
 <body>
 
     <?php include("header.php"); ?>
-
+    <hr>
     <div id="container" >
 
         <form action="" method="POST">
             <h1>Inscription</h1>
+
+            <?php if(isset($errors)) {
+            echo '<font color="red">'.$errors."</font>";
+            }?><br/><br/>
 
             <label for="nom"><b>Nom</b></label>
             <input type="text" placeholder="Entrer votre nom" id="nom" name="nom" value="<?php if(isset($nom)) { echo $nom; } ?>" / required >
@@ -25,14 +29,14 @@ include('../src/Users/Registration.php');
             <label for="prenom"><b>Prénom</b></label>
             <input type="text" placeholder="Entrer votre prénom" id="nom" name="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>" / required>
 
-            <label for="pseudo"><b>Nom d'utilisateur</b></label>
-            <input type="text" placeholder="Entrer le nom d'utilisateur" id="pseudo" name="pseudo" value="<?php if(isset($pseudo)) { echo $pseudo; } ?>" / required>
+            <label for="username"><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" value="<?php if(isset($username)) { echo $username; } ?>" / required>
 
-            <label for="mdp"><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entrer le mot de passe" id="mdp" name="mdp">
+            <label for="password"><b>Mot de passe</b></label>
+            <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" / required>
 
-            <label for="mdp2"><b>Confirmation de mot de passe</b></label>
-            <input type="password" placeholder="Confirmez votre mot de passe" id="mdp2" name="mdp2" required>
+            <label for="password2"><b>Confirmation de mot de passe</b></label>
+            <input type="password" placeholder="Confirmez votre mot de passe" id="password2" name="password2" / required>
 
             <label for="question"><b>Question secrète</b></label>
             <input type="text" placeholder="Entrer votre question secrète" id="question" name="question" value="<?php if(isset($question)) { echo $question; } ?>" / required>
@@ -42,19 +46,11 @@ include('../src/Users/Registration.php');
 
             <input type="submit" name="forminscription" value="Je m'incris">
 
-        </form>
-        <?php
-        if(isset($erreur)) {
-            echo '<font color="red">'.$erreur."</font>";
-        }
-        ?>
-
+        </form><br/>
+        
     </div>
 
     <?php include("footer.php"); ?>
 
-
-
 </body>
-
 </html>

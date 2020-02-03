@@ -1,13 +1,13 @@
 <header>
 
 	<div id="logo">
-		<img src="img/logo_gbaf.jpg" alt="logo">
+		<a href="accueil"><img src="img/logo_gbaf.jpg" alt="logo"></a>
 	</div>
 
 	<div id="user">
-		<a href="compte.html"> <img src="img/user-avatar.jpg" alt="photo de profil"> </a>
+		<a href="profil"> <img src="img/user-avatar.jpg" alt="photo de profil"> </a>
 
-		<a href="#" class="login">Se connecter</a>
+		<a href="connexion" class="login">Se connecter</a>
 	</div> 
 
 </header>

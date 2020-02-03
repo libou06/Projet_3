@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-
+<?php
+include('../src/connect_database.php');
+include('../src/Users/login.php');
+?>
 <html lang="fr">
 
 <head>
@@ -13,25 +16,28 @@
     <div id="container">
         <!-- zone de connexion -->
 
-        <form action="verification.php" method="POST">
+        <form action="accueil" method="POST">
             <h1>Connexion</h1>
 
-            <label><b>Nom d'utilisateur</b></label>
-            <input type="text" placeholder="Entrer le nom d'utilisateur" name="username" required>
+            <label for="username"><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" value="<?php if(isset($username)) { echo $username; } ?>" / required>
 
-            <label><b>Mot de passe</b></label>
-            <input type="password" placeholder="Entrer le mot de passe" name="password" required>
+            <label for="password"><b>Mot de passe</b><a href="forgot_password.php"> (Mot de passe publié?)</a></label>
+            <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" / required>
 
-            <input type="submit" id='submit' value='LOGIN' >
-            <?php
-            if(isset($_GET['erreur'])){
-                $err = $_GET['erreur'];
-                if($err==1 || $err==2)
-                    echo "<p style='color:red'>Utilisateur ou mot de passe incorrect</p>";
-            }
-            ?>
+            <input type="submit" name="formconnexion" value="Se Connecter">
+            
+            <a href="inscription">Pas encore de compte?</a><br/><br/>
+            
         </form>
+        <?php
+        if(isset($erreur)) {
+            echo '<font color="red">'.$erreur."</font>";
+        }
+        ?>
     </div>
-    <?php include("footer.php"); ?>    
+
+    <?php include("footer.php"); ?> 
+
 </body>
 </html>

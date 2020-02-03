@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-
+<?php
+include('../src/connect_database.php');
+include('../src/Users/profile.php');
+?>
 <html>
   <head>
-      <title>Profil compte GBAF</title>
+      <title>Compte utilisateur</title>
       <meta charset="utf-8">
       <?php include("link_css.php"); ?>
   </head>
+
   <body>
-   	<?php include("header.php"); ?>
+   	<?php include("header.php"); ?><hr>
 
-   	<h2>Profil</h2>
-
-    <div align="left" id="profil">
+    
+    <div align="center" id="container">
+      <h2>Profil de <? echo $userinfo['username']; ?></h2>
          <br /><br />
-         	Nom = ...
+         	Nom : <? echo $userinfo['nom']; ?>
          	<br />
-         	Prenom = ...
+         	Prenom : <? echo $userinfo['prenom']; ?>
          	<br />
-         	Pseudo = ...
+         	Pseudo : <? echo $userinfo['username']; ?>
          	<br />
-         
-      	</div>
+          Avatar: <? echo $userinfo['avatar']; ?>
+          <br />
+    </div>
 
     <?php include("footer.php"); ?>
+
   </body>
 </html>
 

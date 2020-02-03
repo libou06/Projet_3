@@ -14,6 +14,9 @@
     elseif($_GET['page']=="profil") {
         include('../templates/profile.php');
     }
+    elseif($_GET['page']=="commentaire") {
+        include('../templates/comments.php');
+    }
     else{
         include('../templates/404.php');
     }

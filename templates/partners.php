@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include('../src/connect_database.php');
+?>
 <html lang="fr">
 
 <head>
@@ -13,23 +16,30 @@
 
     <section id="acteur">
 
-        <img src="img/cde.jpg" alt="logo CDE">
-        
+        <img src="img/cde.jpg" alt="logo partenaires">
+
         <h2>La Chambre Des Entrepreneurs</h2>
-        
-        <p>La CDE (Chambre Des Entrepreneurs) accompagne les entreprises dans leurs démarches de formation. 
+
+        <p>La CDE accompagne les entreprises dans leurs démarches de formation. 
             Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
         </p>
-        <a href="#">lien</a>
-        
+
     </section>
+
     
-    <section id="commentaires">
-        <h2>Commentaires</h2>
+    <section id="commentaire">
+        <article>
+            
+            <button onclick="location.href='commentaire';">Laisser un commentaire</button>
 
+            <?php include('../src/Partners/comments.php'); ?>
+
+        </article>
     </section>
 
-<?php include("footer.php"); ?>
+
+
+    <?php include("footer.php"); ?>
 
 </body>
 
