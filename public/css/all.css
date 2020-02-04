@@ -1,0 +1,406 @@
+/* General */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.text-center{
+    text-align:center;
+}
+
+section {
+    margin: 0 20px;
+}
+
+section h1 {
+    text-align: left;
+    font-size: 40px;
+    color: red;
+    margin: 15px 0;
+}
+
+section p {
+   text-align: justify;
+   font-size: 1.1em;
+   margin: 15px 0;
+}
+
+section h2 {
+    margin: 15px 0;
+    font-size: 40px;
+    color: red;
+    text-shadow: 2px 2px 4px grey;
+}
+
+@media only screen and (min-width: 600px)
+{
+    section {
+        margin: 0 50px;
+    }
+}
+
+/*************************************************/
+/****************Header**************************/
+/***********************************************/
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-right: 1%;
+}
+
+.login {
+    font-size: 18px;
+    border: 1px solid #fc0909;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #fc0909;
+    color: white;
+}
+
+.login:hover {
+    border: 1px solid grey;
+    background-color: grey;
+    color: white;
+}
+
+@media only screen and (min-width: 600px)
+{
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/**************************************/
+/***********HOME**********************/
+/************************************/
+
+#GBAF_presentation {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width:75%;
+    margin:0 auto;
+}
+
+#GBAF_presentation img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+}
+
+#partenaires {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 50px;
+}
+
+#partenaires article  {
+    width: 100%;
+    margin-top: 30px;
+    padding: 10px;
+    border: 1px solid grey;
+    background-color: rgb(58, 58, 58);
+}
+
+#partenaires article div {
+    border: 1px solid grey;
+    width: auto;
+    height: auto; 
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: white;
+    position:relative;
+}
+
+#partenaires article div img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px auto;
+}
+
+#partenaires article div h3 {
+    font-size: 20px;
+    color: red;
+    font-weight: bold;
+}
+
+#partenaires article div button {
+    border: 1.3px solid grey;
+    padding: 7px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black;
+    position:absolute;
+    bottom:10px;
+    right:10px;
+
+}
+
+#partenaires button:hover {
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+/* Règles si la résolution de l'écran fait au min 600 px */
+
+@media only screen and (min-width: 600px)
+{
+    #GBAF_presentation p {
+        padding: 0 40px;
+    }
+
+    article div img {
+        float: left;
+        width: 25%;
+        margin-top: 5%;
+    }
+
+    article div h3 {
+        width: 70%;
+        margin-left: 27%;
+        margin-top: 10px;
+    }
+
+    article div p {
+        width: 70%;
+        margin-left: 27%;
+        margin-top: 10px;
+    }
+
+}
+
+/* Règles si la résolution de l'écran fait au min 1024 px */
+@media only screen and (min-width: 1024px)
+{
+    #GBAF_presentation img {
+        max-width: 100%;
+    }
+    #GBAF_presentation p {
+        padding: 0 150px;
+    }
+
+    section {
+        padding: 0 150px;
+    }
+}
+
+/**************************************/
+/*************Partner*****************/
+/************************************/
+
+#acteur {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    width: 75%;
+    margin: 30px auto;
+}
+
+#acteur img {
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+#commentaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+
+#commentaire article  {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid grey;  
+}
+
+#commentaire article h3 {
+    font-size: 25px;
+    color: black;
+    margin: auto;
+}
+
+#commentaire article button {
+    border: 1.3px solid grey;
+    padding: 7px;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: black; 
+}
+#commentaire button:hover {
+    background-color: rgb(58, 58, 58);
+    color: white;
+}
+
+#message {
+    border: 1px solid grey;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    max-width: 100%;
+    height: auto; 
+    margin: auto;
+    margin-top: 30px;
+    padding: 10px;
+    color: grey;
+    position:relative;
+}
+#commentaire article div {
+    margin-bottom: 10px;
+}
+
+/* Règles si la résolution de l'écran fait au min 600 px */
+
+@media only screen and (min-width: 600px)
+{
+    #commentaire {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    #commentaire article  {
+        width: 100%;
+        position: relative;
+    }
+    #commentaire article button {
+    position:absolute;
+    top:10px;
+    right:10px;
+    margin: auto;
+    }
+
+}
+
+/*************************************/
+/************Comments****************/
+/***********************************/
+
+#container h2{
+    text-align: left;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    color: grey;
+    font-weight: bold;
+    font-size: 25px;
+    word-wrap: break-word;
+}
+
+textarea {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+
+/*************************************/
+/************Login*******************/
+/***********************************/
+#container{
+    width:50%;
+    margin: auto;
+    margin-top:10%;
+    margin-bottom: 10%;
+}
+/* Bordered form */
+form {
+    max-width:100%;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #f1f1f1;
+    background: #fff;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+#container h1{
+    text-align: center;
+    margin: 0 auto;
+    padding-bottom: 10px;
+    color: red;
+    font-weight: bold;
+    font-size: 30px;
+    word-wrap: break-word;
+}
+#container a {
+    text-decoration: none;
+    color: grey;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+    background-color: #778899;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+input[type=submit]:hover {
+    background-color: #3A3A3A;
+    color: white;
+    border: 1px solid #3A3A3A;
+}
+
+/*************************************/
+/***********Profile*******************/
+/***********************************/
+
+#profil {
+    width: auto;
+    margin: auto;
+    height: 500px;
+}
+
+/*************************************/
+/***********Footer*******************/
+/***********************************/
+footer {
+    background-color: rgb(58, 58, 58);
+    color: white;
+    height: 150px;
+    margin-top: 8%;
+}
+
+footer nav ul {
+    width: 200px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+    margin: auto;
+    list-style: none;
+}
+
+footer nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
