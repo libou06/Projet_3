@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <?php
 include('../src/connect_database.php');
+include('../src/Partners/partner.php')
 ?>
 <html lang="fr">
 
@@ -16,12 +17,11 @@ include('../src/connect_database.php');
 
     <section id="acteur">
 
-        <img src="img/cde.jpg" alt="logo partenaires">
+        <img src="/<?= $partner['logo'] ?>" alt="logo partenaires">
 
-        <h2>La Chambre Des Entrepreneurs</h2>
+        <h2><?= $partner['nom'] ?></h2>
 
-        <p>La CDE accompagne les entreprises dans leurs démarches de formation. 
-            Son président est élu pour 3 ans par ses pairs, chefs d’entreprises et présidents des CDE.
+        <p><?= $partner['description'] ?>
         </p>
 
     </section>

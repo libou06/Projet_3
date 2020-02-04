@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <?php
+if(isset($_SESSION['user'])){
+    header("Location: profil?id_user=".$_SESSION['id_user']);
+}
 include('../src/connect_database.php');
 include('../src/Users/login.php');
 ?>
@@ -8,7 +11,7 @@ include('../src/Users/login.php');
 <head>
  <meta charset="utf-8">
     <?php include("link_css.php"); ?>
-    <title>Connection</title>
+    <title>Connexion</title>
 </head>
 <body>
 	<?php include("header.php"); ?>
@@ -16,7 +19,7 @@ include('../src/Users/login.php');
     <div id="container">
         <!-- zone de connexion -->
 
-        <form action="accueil" method="POST">
+        <form action="#" method="POST">
             <h1>Connexion</h1>
 
             <label for="username"><b>Nom d'utilisateur</b></label>

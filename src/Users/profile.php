@@ -1,12 +1,7 @@
 <?php
-session_start();
 
-if(isset($_GET['id_user']) AND $_GET['id_user'] > 0)
-{
-   $getid = intval($_GET[id_user]);
-   $requser = $bdd->prepare('SELECT * FROM account WHERE id_user = ?');
-   $requser->execute(array($getid));
-   $userinfo = $requser ->fetch();
-}
+//Code pour upload https://www.w3schools.com/php/php_file_upload.asp
+//Code pour update la database (username, prenom, nom + nom du fichier avatar)
+
 
 ?>

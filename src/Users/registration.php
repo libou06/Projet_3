@@ -26,6 +26,7 @@ if(isset($_POST['forminscription'])) {
                             $insertmbr->execute(array($nom, $prenom, $username, $password, $question, $reponse));
                             $errors = "Votre compte a bien été créé !" ;
 
+                            header('Location: /accueil');
                         } else {
                             $errors = "Vos mots de passes ne correspondent pas !";
                         }

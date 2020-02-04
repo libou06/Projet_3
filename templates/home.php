@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <?php
+
+if(!isset($_SESSION['user'])){
+    header("Location: connexion");
+}
 include('../src/connect_database.php');
 include('../src/Partners/getAllPartners.php');
 ?>
@@ -28,7 +32,7 @@ include('../src/Partners/getAllPartners.php');
     </ul>
     <p>Même s’il existe une forte concurrence entre ces entités, elles vont toutes travaillerde la même façon pour gérer près de 80 millions de comptes sur le territoire national.</p>
     <p>Le GBAF est le représentant de la profession bancaire et des assureurs sur tousles axes de la réglementation financière française. Sa mission est de promouvoirl'activité bancaire à l’échelle nationale. C’est aussi un interlocuteur privilégié despouvoirs publics.</p>
-    <img src="img/illustration.jpg" alt="" />
+    <img src="/img/illustration.jpg" alt="" />
 </section>
 <hr>
 <section id="partenaires">
@@ -40,7 +44,7 @@ include('../src/Partners/getAllPartners.php');
                 <img src="<?= $partner['logo'] ?>"alt="logo partenaires">
                 <h3><?= $partner['nom']?></h3>
                 <p><?= $partner['description']?></p>
-                <button onclick="location.href='partenaire?acteur= $partners['id_acteur'];">Lire la suite</button>
+                <button onclick="location.href='partenaire/<?=$partner['id_acteur']?>';">Lire la suite</button>
             </div>
     
     <?php endforeach; ?>  
