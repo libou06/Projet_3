@@ -68,12 +68,23 @@ header {
     padding: 10px;
     background-color: #fc0909;
     color: white;
+    margin-left: 10px;
 }
 
 .login:hover {
     border: 1px solid grey;
     background-color: grey;
     color: white;
+}
+
+.logout {
+    align-self: flex-end;
+    margin-left: 10px;
+    color: grey;
+}
+
+.logout:hover {
+    color: red;
 }
 
 @media only screen and (min-width: 600px)
@@ -371,10 +382,17 @@ input[type=submit]:hover {
 /***********Profile*******************/
 /***********************************/
 
-#profil {
-    width: auto;
-    margin: auto;
-    height: 500px;
+input[type=file] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
+
+label {
+    color: rgb(58, 58, 58);
 }
 
 /*************************************/
@@ -404,3 +422,14 @@ footer nav ul li a {
     color: white;
 }
 
+/*************************************/
+/***********404*******************/
+/***********************************/
+#error404 {
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+}

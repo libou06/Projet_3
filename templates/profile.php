@@ -15,23 +15,24 @@ include('../src/Users/profile.php');
 
     
     <div align="center" id="container">
-      <h2>Profil de <?php echo $_SESSION['user']['username']; ?></h2>
+      
         <form action="" method="POST" enctype="multipart/form-data" >
-            <h1>Inscription</h1>
+            <h2>Profil de <?php echo $_SESSION['user']['username']; ?></h2>
 
             <?php if(isset($errors)) {
                 echo '<font color="red">'.$errors."</font>";
             }?><br/><br/>
 
             <label for="nom"><b>Nom</b></label>
-            <input type="text" value="<?php echo $_SESSION['user']['nom'] ?>" id="nom" name="nom" value="<?php if(isset($nom)) { echo $nom; } ?>" required />
+            <input type="text" value="<?php echo $_SESSION['user']['nom'] ?>" id="nom" name="nom" required />
 
             <label for="prenom"><b>Prénom</b></label>
-            <input type="text"  value="<?php echo$_SESSION['user']['prenom']?>" id="nom" name="prenom" value="<?php if(isset($prenom)) { echo $prenom; } ?>" required/>
+            <input type="text"  value="<?php echo$_SESSION['user']['prenom']?>" id="nom" name="prenom" required/>
 
             <label for="username"><b>Nom d'utilisateur</b></label>
-            <input type="text"  value="<?php echo$_SESSION['user']['username']?>" id="username" name="username" value="<?php if(isset($username)) { echo $username; } ?>" required/>
-            <input type="file" name="fileToUpload" id="fileToUpload">
+            <input type="text"  value="<?php echo$_SESSION['user']['username']?>" id="username" name="username"  required/>
+            <label for="avatar"><b>Avatar</b></label>
+            <input type="file" name="avatar" id="avatar" value="<?php echo$_SESSION['user']['avatar']?>">
             <input type="submit" name="editProfile" value="Modifier mon profil">
 
         </form>
