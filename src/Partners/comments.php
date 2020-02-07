@@ -3,9 +3,9 @@
 if($_POST)
 {
 
-	if(!empty($_POST['id_user']) && !empty($_POST['post']))
+	if(!empty($_POST['username']) && !empty($_POST['post']))
 	{
-		$bdd->query("INSERT INTO post (id_user, post, date_add) VALUES ('$_POST[id_user]', '$_POST[post]', NOW())") OR DIE ($bdd->error);       
+		$bdd->query("INSERT INTO post (username, post, date_add) VALUES ('$_POST[username]', '$_POST[post]', NOW())") OR DIE ($bdd->error);       
 		echo 'Votre message a bien été enregistré.';
 	}
 	else
@@ -15,7 +15,7 @@ if($_POST)
 
 }
 
-	$resultat = $bdd->query("SELECT id_user, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS datefr FROM post ORDER BY date_add DESC"); 
+	$resultat = $bdd->query("SELECT username, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS datefr FROM post ORDER BY date_add DESC"); 
 
 	$rows = $resultat->rowCount();   
 	print('<h3>'  . $rows . ' Commentaire(s)</h3>');
@@ -24,7 +24,7 @@ if($_POST)
 	{
 		echo '<div id="message">';
 		echo '<div>Commentaire:<br/>' . $commentaire['post'] . '</div>';
-		echo '<div>Par: ' . $commentaire['id_user'] . ', le: ' . $commentaire['datefr'] . '</div>';
+		echo '<div>Par: ' . $commentaire['username'] . ', le: ' . $commentaire['datefr'] . '</div>';
 		echo '</div>';
 	}
 

@@ -55,10 +55,12 @@ header {
 
 #user {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     margin-top: 3%;
     margin-right: 1%;
+    width: 30%;
 }
 
 .login {
@@ -69,6 +71,7 @@ header {
     background-color: #fc0909;
     color: white;
     margin-left: 10px;
+    margin-top: 10px;
 }
 
 .login:hover {
@@ -81,6 +84,7 @@ header {
     align-self: flex-end;
     margin-left: 10px;
     color: grey;
+    margin-top: 10px;
 }
 
 .logout:hover {
@@ -92,6 +96,10 @@ header {
     header {
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    .login {
+        margin-top: 0;
     }
 }
 /**************************************/
