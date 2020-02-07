@@ -6,6 +6,9 @@ session_start();
     elseif($_GET['page']=="connexion") {
         include('../templates/login.php');
     }
+    elseif($_GET['page']=="motdepasseoublie") {
+        include('../templates/forgot_password.php');
+    }
     elseif($_GET['page']=="partenaire") {
         include('../templates/partners.php');
     }
