@@ -1,58 +1,51 @@
 <?php
-  
-  
-$getid = intval($_GET['id_acteur']);
-$getu = intval($_GET['id_user']);
-  
-  
-$reqid = $bdd->prepare('SELECT * FROM acteur WHERE id_acteur = ?');
-$reqid->execute(array($getid));
-  
-$postinfo = $reqid->fetch();
-  
-$requ = $bdd->prepare('SELECT * FROM account WHERE id_user = ?');
-$requ->execute(array($getu));
-  
-$userinfo = $requ->fetch();
-  
-  
-  
-           
-$check = $bdd->query("SELECT * FROM vote WHERE id_acteur = '".$postinfo['id']."' AND id_user = '".$userinfo['id']."'");
-      
-$resultat = $check->fetch();
-  
-if ($resultat) {  
-  
-    $checkbis = $bdd->query("SELECT * FROM vote WHERE id_acteur = '".$postinfo['id']."' AND id_user = '".$userinfo['id']."'");
-  
-    $result = $checkbis->fetch();
-      
-            if ($result['vote'] == 1) {
-      
-                $reqbs = $bdd->query('UPDATE vote SET votes = vote - 1 WHERE id_acteur = '.$postinfo['id'].' AND id_user = '.$userinfo['id'].'');
-      
-            } else {
-                  
-                $requp = $bdd->query('UPDATE vote SET votes = vote + 1 WHERE id_acteur = '.$postinfo['id'].' AND id_user = '.$userinfo['id'].'');
-  
-            } 
-      
+
+if(isset($_GET['vote'],$_GET['acteur']) AND !empty($_GET['vote']) AND !empty($_GET['acteur'])) {
+
+   $getid = (int) $_GET['acteur'];
+   $getvote = (int) $_GET['vote'];
+   $sessionid = $_SESSION['acteur'];
+
+   $check = $bdd->prepare('SELECT id_acteur FROM acteur WHERE id_acteur = ?');
+   $check->execute(array($getid));
+
+   if($check->rowCount() == 1) {
+      if($getvote == 1) {
+         $check_like = $bdd->prepare('SELECT id FROM likes WHERE id_acteur = ? AND id_user = ?');
+         $check_like->execute(array($getid,$sessionid));
+         $del = $bdd->prepare('DELETE FROM dislikes WHERE id_acteur = ? AND id_user = ?');
+         $del->execute(array($getid,$sessionid));
+
+         if($check_like->rowCount() == 1) {
+            $del = $bdd->prepare('DELETE FROM likes WHERE id_acteur = ? AND id_user = ?');
+            $del->execute(array($getid,$sessionid));
+         } else {
+            $ins = $bdd->prepare('INSERT INTO likes (id_acteur, id_user) VALUES (?, ?)');
+            $ins->execute(array($getid, $sessionid));
+         }
+         
+      } elseif($getvote == 2) {
+         $check_like = $bdd->prepare('SELECT id FROM dislikes WHERE id_acteur = ? AND id_user = ?');
+         $check_like->execute(array($getid,$sessionid));
+         $del = $bdd->prepare('DELETE FROM likes WHERE id_acteur = ? AND id_user = ?');
+         $del->execute(array($getid,$sessionid));
+         if($check_like->rowCount() == 1) {
+            $del = $bdd->prepare('DELETE FROM dislikes WHERE id_acteur = ? AND id_user = ?');
+            $del->execute(array($getid,$sessionid));
+         } else {
+            $ins = $bdd->prepare('INSERT INTO dislikes (id_acteur, id_user) VALUES (?, ?)');
+            $ins->execute(array($getid, $sessionid));
+         }
+      }
+
+      header('Location: partenaire/'.$getid);
+
+
+   } else {
+      exit('Erreur fatale. <a href="accueil">Revenir à l\'accueil</a>');
+   }
 } else {
-  
-  
-$reqins = $bdd->query('INSERT INTO vote(id_acteur, id_user) VALUES ("'.$postinfo['id'].'", "'.$userinfo['id'].'")');
-  
-$requp = $bdd->query('UPDATE vote SET votes = vote + 1 WHERE id_acteur = '.$postinfo['id'].' AND id_user = '.$userinfo['id'].'');
-  
-  
-  
+   exit('Erreur fatale. <a href="accueil">Revenir à l\'accueil</a>');
 }
- 
- 
- 
- 
-header( "Location: partenaire);
- 
- 
+
 ?>

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
 include('../src/connect_database.php');
-include('../src/Partners/partner.php')
+include('../src/Partners/partner.php');
+//include('../src/Partners/vote.php');
 ?>
 <html lang="fr">
 
@@ -30,12 +31,12 @@ include('../src/Partners/partner.php')
     <section id="commentaire">
         <article>
 
-            <input type="radio" name="like" value="like" id="like" checked><label for="like">like</label>
-
-            <input type="radio" name="like" value="dislike" id="dislike" ><label for="dislike">dislike</label><br/>
-            
             <button onclick="location.href='/commentaire';">Laisser un commentaire</button>
 
+            <a href="#">J'aime</a> (<?= $likes ?>)
+            
+            <a href="#">Je n'aime pas</a> (<?= $dislikes ?>) 
+           
             <?php include('../src/Partners/comments.php'); ?>
 
         </article>

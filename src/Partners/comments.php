@@ -7,6 +7,7 @@ if($_POST)
 	{
 		$bdd->query("INSERT INTO post (username, post, date_add) VALUES ('$_POST[username]', '$_POST[post]', NOW())") OR DIE ($bdd->error);       
 		echo 'Votre message a bien été enregistré.';
+		
 	}
 	else
 	{
@@ -15,7 +16,7 @@ if($_POST)
 
 }
 
-	$resultat = $bdd->query("SELECT username, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS datefr FROM post ORDER BY date_add DESC"); 
+	$resultat = $bdd->query("SELECT username, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS datefr FROM post ORDER BY id_post DESC"); 
 
 	$rows = $resultat->rowCount();   
 	print('<h3>'  . $rows . ' Commentaire(s)</h3>');
