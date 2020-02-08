@@ -21,39 +21,38 @@ include('../src/Partners/partner.php');
 
         <h2><?= $partner['nom'] ?></h2>
 
-        <p><?= $partner['description'] ?>
-    </p>
+        <p><?= $partner['description'] ?></p>
 
-</section>
-
-
-<section id="commentaire">
-    <article>
-
-        <div id="submitcom">
-
-            <button onclick="location.href='/commentaire/<?php echo $partner["id_acteur"]?>'">Laisser un commentaire</button>
-
-            <form action="" method="post" >
-                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
-                <input type="submit" name="like" value="J'aime">(<?= $like ?>)
-            </form>
-
-            <form action="" method="post" >
-                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
-                <input type="submit" name="dislike" value="Je n'aime pas">(<?= $dislike ?>)
-            </form>
-
-        </div>
-
-        <?php include('../src/Partners/comments.php'); ?>
-
-    </article>
-</section>
+    </section>
 
 
+    <section id="commentaire">
+        <article>
 
-<?php include("footer.php"); ?>
+            <div id="submitcom">
+
+                <button onclick="location.href='/commentaire/<?php echo $partner["id_acteur"]?>'">Laisser un commentaire</button>
+
+                <form action="" method="post" >
+                    <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                    <input type="submit" name="like" value="J'aime">(<?= $like ?>)
+                </form>
+
+                <form action="" method="post" >
+                    <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                    <input type="submit" name="dislike" value="Je n'aime pas">(<?= $dislike ?>)
+                </form>
+
+            </div>
+
+            <?php include('../src/Partners/comments.php'); ?>
+
+        </article>
+
+        <a href="/accueil" class="retour"> >> Retour à la page d'accueil</a>
+    </section>
+
+    <?php include("footer.php"); ?>
 
 </body>
 
