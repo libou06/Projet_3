@@ -29,8 +29,12 @@ include('../src/Partners/partner.php')
     
     <section id="commentaire">
         <article>
+
+            <input type="radio" name="like" value="like" id="like" checked><label for="like">like</label>
+
+            <input type="radio" name="like" value="dislike" id="dislike" ><label for="dislike">dislike</label><br/>
             
-            <button onclick="location.href='commentaire';">Laisser un commentaire</button>
+            <button onclick="location.href='/commentaire';">Laisser un commentaire</button>
 
             <?php include('../src/Partners/comments.php'); ?>
 
