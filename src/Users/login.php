@@ -12,7 +12,7 @@ if(isset($_POST['formconnexion'])) {
       $userinfo = $requser->fetch();
        if(!empty($userinfo)) {
            $_SESSION['user'] = $userinfo;
-           header("Location: profil");
+           header("Location: accueil");
         }
         else {
          $erreur = "Mauvais nom d'utilisateur ou mot de passe !";
