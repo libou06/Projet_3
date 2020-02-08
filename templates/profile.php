@@ -16,7 +16,7 @@ include('../src/Users/profile.php');
     
     <div align="center" id="container">
       
-        <form action="" method="POST" enctype="multipart/form-data" >
+        <form action="" method="post" enctype="multipart/form-data" >
             <h2>Profil de <?php echo $_SESSION['user']['username']; ?></h2>
 
             <?php if(isset($msg)) {
@@ -33,9 +33,9 @@ include('../src/Users/profile.php');
             <input type="text"  value="<?php echo$_SESSION['user']['username']?>" id="username" name="username"  required/>
 
             <label for="avatar"><b>Avatar</b></label>
-            <input type="file" name="avatar" id="avatar" value="<?php echo $_SESSION['user']['avatar']?>">
+            <input type="file" name="avatar" id="avatar">
 
-            <input type="submit" value="Modifier mon profil">
+            <input type="submit" name="submit" value="Modifier mon profil">
 
         </form>
     </div>

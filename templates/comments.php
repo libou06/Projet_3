@@ -17,19 +17,14 @@ include('../src/connect_database.php');
 	<hr>
 	<div id="container" >
 
-		<form action="partenaire" method="POST">
+		<form action="/partenaire/<?php echo $_GET['acteur']?>" method="POST">
 
 			<h2>Laisser votre commentaire</h2>
-
-			<label for="username"></label>
-			<input type="text" id="username" name="username" value= <?php echo $_SESSION['user']['username']; ?> required><br>
-
             <label for="post"></label>
             <textarea id="post" name="post" placeholder="Laisser votre commentaie ici" required></textarea><br/>			
 
 			<input type="submit" name="validation_post" value="Envoyer">
 
-			
 		</form>
 
 	</div>

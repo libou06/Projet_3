@@ -2,7 +2,6 @@
 <?php
 include('../src/connect_database.php');
 include('../src/Partners/partner.php');
-//include('../src/Partners/vote.php');
 ?>
 <html lang="fr">
 
@@ -31,12 +30,18 @@ include('../src/Partners/partner.php');
     <section id="commentaire">
         <article>
 
-            <button onclick="location.href='/commentaire';">Laisser un commentaire</button>
+            <button onclick="location.href='/commentaire/<?php echo $partner["id_acteur"]?>'">Laisser un commentaire</button>
 
-            <a href="#">J'aime</a> (<?= $likes ?>)
-            
-            <a href="#">Je n'aime pas</a> (<?= $dislikes ?>) 
-           
+            <form action="" method="post" >
+                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                <input type="submit" name="like" value="J'aime">(<?= $like ?>)
+            </form>
+
+            <form action="" method="post" >
+                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                <input type="submit" name="dislike" value="Je n'aime pas">(<?= $dislike ?>)
+            </form>
+
             <?php include('../src/Partners/comments.php'); ?>
 
         </article>

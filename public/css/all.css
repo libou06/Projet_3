@@ -63,6 +63,13 @@ header {
     width: 30%;
 }
 
+#user img{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
 .login {
     font-size: 18px;
     border: 1px solid #fc0909;
