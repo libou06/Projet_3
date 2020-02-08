@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 include('../src/connect_database.php');
-include('../src/Partners/partner.php')
+include('../src/Partners/partner.php');
 ?>
 <html lang="fr">
 
@@ -30,11 +30,17 @@ include('../src/Partners/partner.php')
     <section id="commentaire">
         <article>
 
-            <input type="radio" name="like" value="like" id="like" checked><label for="like">like</label>
+            <button onclick="location.href='/commentaire/<?php echo $partner["id_acteur"]?>'">Laisser un commentaire</button>
 
-            <input type="radio" name="like" value="dislike" id="dislike" ><label for="dislike">dislike</label><br/>
-            
-            <button onclick="location.href='/commentaire';">Laisser un commentaire</button>
+            <form action="" method="post" >
+                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                <input type="submit" name="like" value="J'aime">(<?= $like ?>)
+            </form>
+
+            <form action="" method="post" >
+                <input type="hidden" name="idActeur" value="<?php echo $partner['id_acteur']?>">
+                <input type="submit" name="dislike" value="Je n'aime pas">(<?= $dislike ?>)
+            </form>
 
             <?php include('../src/Partners/comments.php'); ?>
 

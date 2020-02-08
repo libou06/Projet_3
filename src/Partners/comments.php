@@ -1,30 +1,26 @@
 <?php
 
-if($_POST)
-{
-
-	if(!empty($_POST['username']) && !empty($_POST['post']))
-	{
-		$bdd->query("INSERT INTO post (username, post, date_add) VALUES ('$_POST[username]', '$_POST[post]', NOW())") OR DIE ($bdd->error);       
-		echo 'Votre message a bien été enregistré.';
-	}
-	else
-	{
-		echo 'Afin de déposer un commentaire, veuillez svp remplir tous les champs du formulaire';
-	}
-
+if(isset($_POST['validation_post'])){
+    $ins = $bdd->prepare('INSERT INTO post (id_user, id_acteur, date_add, post) VALUES (?, ?, NOW(), ?)');
+    $ins->execute(array($_SESSION['user']['id_user'], $_GET['acteur'], $_POST['post']));
 }
 
-	$resultat = $bdd->query("SELECT username, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS datefr FROM post ORDER BY date_add DESC"); 
+$resultat = $bdd->prepare("SELECT id_user, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS dateFormat FROM post WHERE id_acteur=? ORDER BY id_post DESC");
+$resultat->execute(array($_GET['acteur']));
 
 	$rows = $resultat->rowCount();   
 	print('<h3>'  . $rows . ' Commentaire(s)</h3>');
 
 	while($commentaire = $resultat->fetch())
 	{
+
+        $requser = $bdd->prepare("SELECT * FROM account WHERE id_user = ?");
+        $requser->execute(array($commentaire['id_user']));
+        $userinfo = $requser->fetch();
+
 		echo '<div id="message">';
 		echo '<div>Commentaire:<br/>' . $commentaire['post'] . '</div>';
-		echo '<div>Par: ' . $commentaire['username'] . ', le: ' . $commentaire['datefr'] . '</div>';
+		echo '<div>Par: ' .  $userinfo['username'] . ', le: ' . $commentaire['dateFormat'] . '</div>';
 		echo '</div>';
 	}
 
