@@ -2,10 +2,10 @@
 -- version 4.9.2
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  sam. 08 fév. 2020 à 13:37
--- Version du serveur :  10.4.11-MariaDB
--- Version de PHP :  7.4.1
+-- Hôte : 127.0.0.1:3306
+-- Généré le :  sam. 08 fév. 2020 à 20:55
+-- Version du serveur :  8.0.18
+-- Version de PHP :  7.3.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -28,16 +28,18 @@ SET time_zone = "+00:00";
 -- Structure de la table `account`
 --
 
-CREATE TABLE `account` (
-  `id_user` int(11) NOT NULL,
+DROP TABLE IF EXISTS `account`;
+CREATE TABLE IF NOT EXISTS `account` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `prenom` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `question` varchar(255) NOT NULL,
   `reponse` varchar(255) NOT NULL,
-  `avatar` text DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `avatar` text,
+  PRIMARY KEY (`id_user`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -45,12 +47,14 @@ CREATE TABLE `account` (
 -- Structure de la table `acteur`
 --
 
-CREATE TABLE `acteur` (
-  `id_acteur` int(11) NOT NULL,
+DROP TABLE IF EXISTS `acteur`;
+CREATE TABLE IF NOT EXISTS `acteur` (
+  `id_acteur` int(11) NOT NULL AUTO_INCREMENT,
   `nom` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `logo` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `logo` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_acteur`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Déchargement des données de la table `acteur`
@@ -68,13 +72,15 @@ INSERT INTO `acteur` (`id_acteur`, `nom`, `description`, `logo`) VALUES
 -- Structure de la table `post`
 --
 
-CREATE TABLE `post` (
-  `id_post` int(11) NOT NULL,
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE IF NOT EXISTS `post` (
+  `id_post` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
   `id_acteur` int(11) NOT NULL,
   `date_add` date NOT NULL,
-  `post` text NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+  `post` text NOT NULL,
+  PRIMARY KEY (`id_post`)
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- --------------------------------------------------------
 
@@ -82,67 +88,13 @@ CREATE TABLE `post` (
 -- Structure de la table `vote`
 --
 
-CREATE TABLE `vote` (
+DROP TABLE IF EXISTS `vote`;
+CREATE TABLE IF NOT EXISTS `vote` (
+  `id_acteur` int(11) NOT NULL AUTO_INCREMENT,
   `id_user` int(11) NOT NULL,
-  `id_acteur` int(11) NOT NULL,
-  `vote` varchar(255) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
-
---
--- Index pour les tables déchargées
---
-
---
--- Index pour la table `account`
---
-ALTER TABLE `account`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- Index pour la table `acteur`
---
-ALTER TABLE `acteur`
-  ADD PRIMARY KEY (`id_acteur`);
-
---
--- Index pour la table `post`
---
-ALTER TABLE `post`
-  ADD PRIMARY KEY (`id_post`);
-
---
--- Index pour la table `vote`
---
-ALTER TABLE `vote`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT pour les tables déchargées
---
-
---
--- AUTO_INCREMENT pour la table `account`
---
-ALTER TABLE `account`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `acteur`
---
-ALTER TABLE `acteur`
-  MODIFY `id_acteur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT pour la table `post`
---
-ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
-
---
--- AUTO_INCREMENT pour la table `vote`
---
-ALTER TABLE `vote`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  `vote` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_acteur`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
