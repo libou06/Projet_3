@@ -22,13 +22,15 @@ include('../src/Partners/partner.php');
         <h2><?= $partner['nom'] ?></h2>
 
         <p><?= $partner['description'] ?>
-        </p>
+    </p>
 
-    </section>
+</section>
 
-    
-    <section id="commentaire">
-        <article>
+
+<section id="commentaire">
+    <article>
+
+        <div id="submitcom">
 
             <button onclick="location.href='/commentaire/<?php echo $partner["id_acteur"]?>'">Laisser un commentaire</button>
 
@@ -42,14 +44,16 @@ include('../src/Partners/partner.php');
                 <input type="submit" name="dislike" value="Je n'aime pas">(<?= $dislike ?>)
             </form>
 
-            <?php include('../src/Partners/comments.php'); ?>
+        </div>
 
-        </article>
-    </section>
+        <?php include('../src/Partners/comments.php'); ?>
+
+    </article>
+</section>
 
 
 
-    <?php include("footer.php"); ?>
+<?php include("footer.php"); ?>
 
 </body>
 
