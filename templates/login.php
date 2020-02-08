@@ -25,7 +25,7 @@ include('../src/Users/login.php');
             <label for="username"><b>Nom d'utilisateur</b></label>
             <input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" value="<?php if(isset($username)) { echo $username; } ?>" / required>
 
-            <label for="password"><b>Mot de passe</b><a href="forgot_password.php"> (Mot de passe publié?)</a></label>
+            <label for="password"><b>Mot de passe</b><a href="/motdepasseoublie"> (Mot de passe publié?)</a></label>
             <input type="password" placeholder="Entrer le mot de passe" id="password" name="password" / required>
 
             <input type="submit" name="formconnexion" value="Se Connecter">
