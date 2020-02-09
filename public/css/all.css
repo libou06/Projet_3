@@ -97,6 +97,7 @@ header a{
 .logout {
     margin-left: 10px;
     color: grey;
+    margin-top: 5px;
 }
 
 .logout:hover {
