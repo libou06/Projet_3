@@ -85,7 +85,7 @@ CREATE TABLE `post` (
 CREATE TABLE `vote` (
   `id_vote` int(11) NOT NULL,
   `id_acteur` int(11) NOT NULL,
-  `vote` varchar(255) NOT NULL,
+  `vote` tinyint(1) NOT NULL,
   `id_user` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
