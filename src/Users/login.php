@@ -1,7 +1,5 @@
 <?php
-if(isset($_SESSION['user'])){
-    header("Location: profil");
-}
+
 
 if(isset($_POST['formconnexion'])) {
    $usernameconnect = htmlspecialchars($_POST['username']);
