@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include('../src/connect_database.php');
+?>
 <html lang="fr">
 
 <head>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 if(isset($_SESSION['user'])){
-    header("Location: /profil");
+    header("Location: /accueil");
 }
 include('../src/connect_database.php');
 include('../src/Users/login.php');

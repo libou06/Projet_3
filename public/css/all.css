@@ -505,7 +505,7 @@ footer nav ul li a {
 /***********404*******************/
 /***********************************/
 #error404 {
-    height: 170px;
+    height: 210px;
     display: flex;
     flex-direction: column;
     justify-content: center;
