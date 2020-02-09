@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le :  sam. 08 fév. 2020 à 13:37
+-- Généré le :  Dim 09 fév. 2020 à 08:30
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP :  7.4.1
 
@@ -83,9 +83,10 @@ CREATE TABLE `post` (
 --
 
 CREATE TABLE `vote` (
-  `id_user` int(11) NOT NULL,
+  `id_vote` int(11) NOT NULL,
   `id_acteur` int(11) NOT NULL,
-  `vote` varchar(255) NOT NULL
+  `vote` varchar(255) NOT NULL,
+  `id_user` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
 
 --
@@ -114,7 +115,7 @@ ALTER TABLE `post`
 -- Index pour la table `vote`
 --
 ALTER TABLE `vote`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`id_vote`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -124,7 +125,7 @@ ALTER TABLE `vote`
 -- AUTO_INCREMENT pour la table `account`
 --
 ALTER TABLE `account`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `acteur`
@@ -136,13 +137,13 @@ ALTER TABLE `acteur`
 -- AUTO_INCREMENT pour la table `post`
 --
 ALTER TABLE `post`
-  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id_post` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `vote`
 --
 ALTER TABLE `vote`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_vote` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
