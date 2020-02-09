@@ -1,7 +1,5 @@
 <?php
-if(isset($_SESSION['user'])){
-    header("Location: /profil");
-}
+
 
 if(isset($_POST['questionconnexion'])) {
    $userconnect = htmlspecialchars($_POST['username']);
@@ -13,7 +11,7 @@ if(isset($_POST['questionconnexion'])) {
       $userinfo = $requser->fetch();
        if(!empty($userinfo)) {
            $_SESSION['user'] = $userinfo;
-           header("Location: /accueil");
+           header("Location: /profil");
         }
         else {
          $erreur = "Mauvais nom d'utilisateur ou mot de passe !";

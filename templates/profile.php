@@ -36,6 +36,12 @@ include('../src/Users/profile.php');
 
             <label for="username"><b>Nom d'utilisateur</b></label>
             <input type="text"  value="<?php echo$_SESSION['user']['username']?>" id="username" name="username"  required/>
+            
+            <label>Mot de passe :</label>
+            <input type="password" name="newmdp1" placeholder="Mot de passe"/>
+            
+            <label>Confirmation - mot de passe :</label>
+            <input type="password" name="newmdp2" placeholder="Confirmation du mot de passe" />
 
             <label for="avatar"><b>Avatar</b></label>
             <input type="file" name="avatar" id="avatar">
