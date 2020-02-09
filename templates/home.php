@@ -2,7 +2,7 @@
 <?php
 
 if(!isset($_SESSION['user'])){
-    header("Location: connexion");
+    header("Location: /connexion");
 }
 include('../src/connect_database.php');
 include('../src/Partners/getAllPartners.php');
@@ -41,7 +41,7 @@ include('../src/Partners/getAllPartners.php');
     <article>
     <?php foreach ($partners as $partner): ?>
             <div>
-                <img src="<?= $partner['logo'] ?>"alt="logo partenaires">
+                <img src="/<?= $partner['logo'] ?>"alt="logo partenaires">
                 <h3><?= $partner['nom']?></h3>
                 <p><?= $partner['description']?></p>
                 <button onclick="location.href='partenaire/<?=$partner['id_acteur']?>';">Lire la suite</button>

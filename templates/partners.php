@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <?php
 include('../src/connect_database.php');
+
+if(!isset($_SESSION['user'])){
+    header("Location: /connexion");
+}
+
 include('../src/Partners/partner.php');
 ?>
 <html lang="fr">

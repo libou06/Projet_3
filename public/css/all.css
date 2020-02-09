@@ -74,6 +74,9 @@ header {
     object-fit: cover;
 }
 
+header a{
+    text-decoration:none;
+}
 .login {
     font-size: 18px;
     border: 1px solid #fc0909;
@@ -92,10 +95,8 @@ header {
 }
 
 .logout {
-    align-self: flex-end;
     margin-left: 10px;
     color: grey;
-    margin-top: 10px;
 }
 
 .logout:hover {
