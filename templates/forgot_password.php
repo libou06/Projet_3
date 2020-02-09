@@ -26,9 +26,9 @@ include('../src/Users/forgot_password.php');
 
             <label for="question"><b>Question secrète</b></label>
             <select name="question" / required>
-                <option value="question1">Nom de votre mère</option>
-                <option value="question2">Nom de votre animal de compagnie</option>
-                <option value="question3">Nom de votre ville de naissance</option>
+                <option value="Nom de votre mère">Nom de votre mère</option>
+                <option value="Nom de votre animal de compagnie">Nom de votre animal de compagnie</option>
+                <option value="Nom de votre ville de naissance">Nom de votre ville de naissance</option>
             </select>
 
             <label for="reponse"><b>Votre réponse</b>

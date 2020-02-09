@@ -5,8 +5,8 @@ if(isset($_POST['validation_post'])){
     $ins->execute(array($_SESSION['user']['id_user'], $_GET['acteur'], $_POST['post']));
 }
 
-$resultat = $bdd->prepare("SELECT id_user, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS dateFormat FROM post WHERE id_acteur=? AND id_user=? ORDER BY id_post DESC");
-$resultat->execute(array($_GET['acteur'], $_SESSION['user']['id_user']));
+$resultat = $bdd->prepare("SELECT id_user, post, DATE_FORMAT(date_add, '%d/%m/%Y') AS dateFormat FROM post WHERE id_acteur=? ORDER BY id_post DESC");
+$resultat->execute(array($_GET['acteur']));
 
 	$rows = $resultat->rowCount();   
 	print('<h3>'  . $rows . ' Commentaire(s)</h3>');

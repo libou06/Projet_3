@@ -16,7 +16,7 @@ if(isset($_POST['questionconnexion'])) {
            header("Location: /accueil");
         }
         else {
-         $erreur = "Mauvais nom d'utilisateur ou mot de passe !";
+         $erreur = "Mauvais nom d'utilisateur ou mauvaise question secrète !";
         }
    } else {
       $erreur = "Tous les champs doivent être complétés !";
