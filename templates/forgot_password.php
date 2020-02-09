@@ -21,11 +21,18 @@ include('../src/Users/forgot_password.php');
         <form action="#" method="POST">
             <h1>Mot de passe oublié</h1>
 
-            <label for="question"><b>Votre question secrète</b></label>
-            <input type="text" placeholder="Entrer votre question secrète" id="question" name="question" required />
+            <label for="username"><b>Nom d'utilisateur</b></label>
+            <input type="text" placeholder="Entrer le nom d'utilisateur" id="username" name="username" value="<?php if(isset($username)) { echo $username; } ?>" / required>
+
+            <label for="question"><b>Question secrète</b></label>
+            <select name="question" / required>
+                <option value="question1">Nom de votre mère</option>
+                <option value="question2">Nom de votre animal de compagnie</option>
+                <option value="question3">Nom de votre ville de naissance</option>
+            </select>
 
             <label for="reponse"><b>Votre réponse</b>
-            <input type="text" placeholder="Entrer votre question secrète" id="reponse" name="reponse" required />
+            <input type="text" placeholder="Entrer votre réponse secrète" id="reponse" name="reponse" required />
 
             <input type="submit" name="questionconnexion" value="Se Connecter">
             

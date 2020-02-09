@@ -6,8 +6,8 @@ include('../src/Users/registration.php');
 <html lang="fr">
 
 <head>
- <meta charset="utf-8">
-    <?php include("link_css.php"); ?>
+   <meta charset="utf-8">
+   <?php include("link_css.php"); ?>
 </head>
 
 <body>
@@ -20,7 +20,7 @@ include('../src/Users/registration.php');
             <h1>Inscription</h1>
 
             <?php if(isset($errors)) {
-            echo '<font color="red">'.$errors."</font>";
+                echo '<font color="red">'.$errors."</font>";
             }?><br/><br/>
 
             <label for="nom"><b>Nom</b></label>
@@ -39,7 +39,11 @@ include('../src/Users/registration.php');
             <input type="password" placeholder="Confirmez votre mot de passe" id="password2" name="password2" / required>
 
             <label for="question"><b>Question secrète</b></label>
-            <input type="text" placeholder="Entrer votre question secrète" id="question" name="question" value="<?php if(isset($question)) { echo $question; } ?>" / required>
+            <select name="question" / required>
+                <option value="question1">Nom de votre mère</option>
+                <option value="question2">Nom de votre animal de compagnie</option>
+                <option value="question3">Nom de votre ville de naissance</option>
+            </select>
 
             <label for="reponse"><b>Réponse à la question secrète</b></label>
             <input type="text" placeholder="Entrer la réponse à la question secrète" id="reponse" name="reponse" value="<?php if(isset($reponse)) { echo $reponse; } ?>" / required>
