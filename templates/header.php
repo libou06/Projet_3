@@ -15,7 +15,7 @@
             <?php if($_SESSION['user']['avatar'] != null){?>
             <a href="/profil" > <img src="/img/<?php echo $_SESSION['user']['avatar'] ?>" alt="photo de profil"> </a>
             <?php } ?>
-            <a href="/profil" class="login">Bonjour <?php echo$_SESSION['user']['prenom']?></a>
+            <a href="/profil" class="login">Bonjour <?php echo$_SESSION['user']['nom']?> <?php echo$_SESSION['user']['prenom']?></a>
 
             <a href ="/deconnexion" class="logout">Déconnexion</a>
 

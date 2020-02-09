@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <?php
 if(isset($_SESSION['user'])){
-    header("Location: profil");
+    header("Location: /profil");
 }
+
 include('../src/connect_database.php');
 include('../src/Users/forgot_password.php');
 ?>

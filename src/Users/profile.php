@@ -64,6 +64,20 @@ if(isset($_POST['submit']) && isset($_SESSION['user'])){
         $updateusername->execute(array($username, $_SESSION['user']['id_user']));
     }
 
+    
+   if(isset($_POST['newmdp1']) AND !empty($_POST['newmdp1']) AND isset($_POST['newmdp2']) AND !empty($_POST['newmdp2'])) {
+      $mdp1 = sha1($_POST['newmdp1']);
+      $mdp2 = sha1($_POST['newmdp2']);
+      
+      if($mdp1 == $mdp2) {
+         $insertmdp = $bdd->prepare("UPDATE account SET password = ? WHERE id_user = ?");
+         $insertmdp->execute(array($mdp1, $_SESSION['user']['id_user']));
+         
+      } else {
+         $msg = "Vos deux mdp ne correspondent pas !";
+      }
+   }
+
     $requser = $bdd->prepare("SELECT * FROM account WHERE id_user = ?");
     $requser->execute(array( $_SESSION['user']['id_user']));
     $userinfo = $requser->fetch();
