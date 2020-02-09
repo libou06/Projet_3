@@ -267,12 +267,13 @@ header a{
 }
 
 #commentaire {  
+
     padding: 15px;
     max-width: 100%;
 }
 
 #commentaire article  {
-
+    margin-bottom: 30px;
     padding: 15px;
     border: 1px solid grey;  
 }
@@ -313,6 +314,17 @@ header a{
     cursor:pointer;
     border-radius: 5px; 
     margin: 0 5px;
+}
+
+.retour {
+    text-decoration: none;
+    color: grey;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.retour:hover {
+    color: red;
 }
 
 /*************comments*****************/
